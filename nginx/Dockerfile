@@ -1,3 +1,4 @@
+# Datei: security/nginx/Dockerfile (docbuc/nginx:nonroot)
 FROM nginx:alpine
 
 COPY default.conf /etc/nginx/conf.d/
