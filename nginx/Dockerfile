@@ -1,8 +1,9 @@
 # Datei: security/nginx/Dockerfile (docbuc/nginx:nonroot)
 FROM nginx:alpine
 
+RUN touch /var/run/nginx.pid \
+  && chown -R nginx:nginx /var/run/nginx.pid \
+  && chown -R nginx:nginx /var/cache/nginx
 COPY default.conf /etc/nginx/conf.d/
-RUN touch /var/run/nginx.pid && \
-  chown -R nginx:nginx /var/run/nginx.pid
 EXPOSE 8080
 USER nginx
